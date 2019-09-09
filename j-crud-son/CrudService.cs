@@ -105,13 +105,17 @@ namespace j_crud_son
             var inCreazione = entity.Id == 0 || forzaInserimento;
 
             if (inCreazione)
+            {
                 entity.Id = NextId();
+                _set.Add(ToJToken(entity));
+            }
             else
-                _set.Remove(_set
-                    .FirstOrDefault(x => x["Id"].Value<long>() == entity.Id)
-                );
-            
-            _set.Add(ToJToken(entity));
+            {
+                var old = _set.FirstOrDefault(x => x["Id"].Value<long>() == entity.Id);
+                var oldIndex = _set.IndexOf(old);
+                _set.Remove(old);
+                _set.Insert(oldIndex, ToJToken(entity));
+            }
             
             SaveChanges();
             

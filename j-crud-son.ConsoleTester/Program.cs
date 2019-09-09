@@ -40,6 +40,9 @@ namespace j_crud_son.ConsoleTester
             
             errori.AddRange(FindDifferences(comuneInserito, comuneDaInserire));
             
+            if(!CheckOrdinamentoSet(comuneService.Load().ToList()))
+                errori.Add("Set non ordinato");
+            
             Log("TestInsert", errori.Any() 
                 ? $"Errori: {string.Join("; ", errori)}" 
                 : "Comune inserito correttamente");
@@ -66,13 +69,14 @@ namespace j_crud_son.ConsoleTester
                 return;
             }
             
-            
             var errori = new List<string>();
             if(idModificato != idComuneSelezionato)
                 errori.Add("Errore l'id è cambiato''");
 
             errori.AddRange(FindDifferences(comuneModificato, comuneDaModificare));
             
+            if(!CheckOrdinamentoSet(comuneService.Load().ToList()))
+                errori.Add("Set non ordinato");
             
             Log("TestUpdate", errori.Any() 
                 ? $"Errori: {string.Join("; ", errori)}" 
@@ -105,5 +109,11 @@ namespace j_crud_son.ConsoleTester
             
             return nuoviErrori;
         }
+
+        public static bool CheckOrdinamentoSet(List<Comune> lista)
+        {
+            var ordered = lista.OrderBy(x => x.Id);
+            return lista.SequenceEqual(ordered);
+        } 
     }
 }
