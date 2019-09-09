@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "j-crud-son", "j-crud-son\j-crud-son.csproj", "{45890094-5A1A-4965-A070-62C96684ABDA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "j-crud-son.UnitTest", "j-crud-son.UnitTest\j-crud-son.UnitTest.csproj", "{48A17F52-0A3F-4AF5-98C6-753B6ACF0AFB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{45890094-5A1A-4965-A070-62C96684ABDA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{45890094-5A1A-4965-A070-62C96684ABDA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{45890094-5A1A-4965-A070-62C96684ABDA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{45890094-5A1A-4965-A070-62C96684ABDA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{48A17F52-0A3F-4AF5-98C6-753B6ACF0AFB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{48A17F52-0A3F-4AF5-98C6-753B6ACF0AFB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{48A17F52-0A3F-4AF5-98C6-753B6ACF0AFB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{48A17F52-0A3F-4AF5-98C6-753B6ACF0AFB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,39 @@
+{
+  "Data": [
+    {
+      "Id": "1",
+      "Code": "Bologna",
+      "Description": "Bologna",
+      "NotActive": "false",
+      "Order": "0"
+    },
+    {
+      "Id": "2",
+      "Code": "Bolzano",
+      "Description": "Bolzano",
+      "NotActive": "false",
+      "Order": "0"
+    },
+    {
+      "Id": "3",
+      "Code": "Brescia",
+      "Description": "Brescia",
+      "NotActive": "false",
+      "Order": "0"
+    },
+    {
+      "Id": "4",
+      "Code": "Brindisi",
+      "Description": "Brindisi",
+      "NotActive": "false",
+      "Order": "0"
+    },
+    {
+      "Code": "Piacenza",
+      "Description": "Piacenza",
+      "NotActive": "false",
+      "Order": 10,
+      "Id": 5
+    }
+  ]
+}
