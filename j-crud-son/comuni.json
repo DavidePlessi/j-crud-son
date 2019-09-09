@@ -1,13 +1,6 @@
 {
   "Data": [
     {
-      "Id": "1",
-      "Code": "Bologna",
-      "Description": "Bologna",
-      "NotActive": "false",
-      "Order": "0"
-    },
-    {
       "Id": "2",
       "Code": "Bolzano",
       "Description": "Bolzano",
@@ -34,6 +27,27 @@
       "NotActive": "false",
       "Order": 10,
       "Id": 5
+    },
+    {
+      "Code": "Bolo",
+      "Description": "ByNight",
+      "NotActive": "true",
+      "Order": 1,
+      "Id": 6
+    },
+    {
+      "Code": "Bolo",
+      "Description": "ByNight",
+      "NotActive": "true",
+      "Order": 1,
+      "Id": 7
+    },
+    {
+      "Code": "BolognaModificaCodeModificaCode",
+      "Description": "BolognaBolognaBolognaBologna",
+      "NotActive": "false",
+      "Order": 6,
+      "Id": 1
     }
   ]
 }

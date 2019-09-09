@@ -16,7 +16,7 @@ namespace j_crud_son.Tests
         {
         }
         
-        public ComuneService() : base("./comuni.json", "Data")
+        public ComuneService() : base("C:\\Progetti\\j-crud-son\\j-crud-son\\comuni.json", "Data")
         {
         }
     }
