@@ -1,9 +1,3 @@
-using System;
-using System.CodeDom;
-using System.Collections.Generic;
-using System.Data.Common;
-using Newtonsoft.Json.Linq;
-
 namespace j_crud_son.Tests
 {
     public interface IComuneService : ICrudService<Comune>
