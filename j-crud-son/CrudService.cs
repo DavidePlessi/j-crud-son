@@ -71,6 +71,7 @@ namespace j_crud_son
                 .FirstOrDefault(x => x.Id == id);
             return obj;
         }
+        
         public IEnumerable<TSelect> LoadAndSelect<TSelect>(Func<T, bool> filter, Func<T, TSelect> select)
         {
             var objs = _set
