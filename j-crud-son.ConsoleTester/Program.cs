@@ -24,7 +24,6 @@ namespace j_crud_son.ConsoleTester
                 NotActive = "true"
             };
             
-            var newId = comuneService.NextId();
             var idNuovoComune = comuneService.Save(comuneDaInserire);
             var comuneInserito = comuneService.Load(idNuovoComune);
 
@@ -35,7 +34,7 @@ namespace j_crud_son.ConsoleTester
             }
             var errori = new List<string>();
             
-            if(newId != idNuovoComune || idNuovoComune != comuneInserito.Id)
+            if(idNuovoComune != comuneInserito.Id)
                 errori.Add("Errore nella generazione dell'Id");
             
             errori.AddRange(FindDifferences(comuneInserito, comuneDaInserire));

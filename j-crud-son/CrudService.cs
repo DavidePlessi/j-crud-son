@@ -6,27 +6,13 @@ using Newtonsoft.Json.Linq;
 
 namespace j_crud_son
 {
-    public interface ICrudService<T> where T : Entity
-    {
-        T ToEntity(JToken obj);
-        JToken ToJToken(T entity);
-        long NextId();
-        IEnumerable<T> Load(Func<T, bool> filter = null);
-        T Load(long id);
-        IEnumerable<TSelect> LoadAndSelect<TSelect>(Func<T, bool> filter, Func<T, TSelect> select);
-        T FirstOrDefault(Func<T, bool> filter = null);
-        long Save(T entity, bool forzaInserimento = false);
-        long Delete(T entity);
-        long Delete(long id);
-    }
-
     public abstract class CrudService<T> : ICrudService<T> where T : Entity
     {
         private JObject _jObject;
         private JArray _set;
         private string _jsonPath;
 
-        public CrudService( 
+        protected CrudService( 
             string jsonPath, 
             string entityName,
             JObject jObject = null,
@@ -42,19 +28,24 @@ namespace j_crud_son
         {
             return obj.ToObject<T>();
         }
-
+        
         public JToken ToJToken(T entity)
         {
             return JToken.FromObject(entity);
         }
 
-        public long NextId()
+        private long NextId()
         {
+            // Non è il massimo potrebbero esserci inserimenti di due entità diverse con lo stesso id:
+            //    - Elimino l'ultimo
+            //    - Inserisco una nuova entità
+            //    - L'entità eliminata e l'entità inserita hanno lo stesso id
+            // Bisognerebbe inserire nel json un campo con l'ultimo id utilizzato
             var lastId = _set.Select(ToEntity).Max(x => x.Id);
 
             return lastId + 1;
         }
-
+        
         private void SaveChanges()
         {
             var output =Newtonsoft.Json.JsonConvert
@@ -80,22 +71,12 @@ namespace j_crud_son
                 .FirstOrDefault(x => x.Id == id);
             return obj;
         }
-
         public IEnumerable<TSelect> LoadAndSelect<TSelect>(Func<T, bool> filter, Func<T, TSelect> select)
         {
             var objs = _set
                 .Select(ToEntity)
                 .Where(filter)
                 .Select(select);
-            
-            return objs;
-        }
-
-        public T FirstOrDefault(Func<T, bool> filter = null)
-        {
-            var objs = _set
-                .Select(ToEntity)
-                .FirstOrDefault(filter ?? (x => true));
             
             return objs;
         }

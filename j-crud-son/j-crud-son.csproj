@@ -44,6 +44,7 @@
   <ItemGroup>
     <Compile Include="CrudService.cs" />
     <Compile Include="Entity.cs" />
+    <Compile Include="ICrudService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Tests\Comune.cs" />
     <Compile Include="Tests\ComuneService.cs" />
